@@ -1,0 +1,33 @@
+class CreativeEntrepreneur:
+    def __init__(self, name):
+        self.name = name
+
+    def brainstorm(self):
+        return f"{self.name} is brainstorming new creative ideas."
+
+
+class RawDesigner(CreativeEntrepreneur):
+    def create_visuals(self):
+        return f"{self.name} is designing eye-catching visuals."
+
+
+class ContentStrategist(CreativeEntrepreneur):
+    def craft_story(self):
+        return f"{self.name} is crafting an engaging narrative."
+
+
+class TalesFromTheIslandsCreator(RawDesigner, ContentStrategist):
+    def __init__(self, name, trending_topic):
+        super().__init__(name)
+        self.trending_topic = trending_topic
+
+    def produceReel(self):
+        if "conspiracy" in self.trending_topic.lower():
+            return f"{self.name} is producing a min"
+
+creator = TalesFromTheIslandsCreator("Alex", "Conspiracy about lost civilizations")
+
+creator.brainstorm()
+creator.create_visuals()
+creator.craft_story()
+creator.produceReel()
